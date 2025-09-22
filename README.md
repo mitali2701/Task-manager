@@ -24,17 +24,8 @@ Frontend: HTML5, CSS3, JavaScript
 
 Data Storage: LocalStorage (Browser-based)
 
-Deployment: GitHub Pages🔧 How to Run
+Deployment: GitHub Page
 
-Clone the repo / Download ZIP
-
-Open index.html in any modern browser
-
-All tasks will be stored locally in your browser
-
-🌐 Live Demo
-
-👉 View Project on GitHub Pages
 
 📌 Future Scope
 
@@ -52,3 +43,4 @@ This project is open-source and available under the MIT License
 .
 
 ✨ Made with ❤️ for productivity
+
