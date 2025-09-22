@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager - Profile</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Task Manager</h2>
+      <ul class="nav-links">
+        <li><a href="home.html">📊 Dashboard</a></li>
+        <li><a href="home.html#tasks">✅ Tasks</a></li>
+        <li><a href="#" class="active">👤 Profile</a></li>
+        <li><a href="#" id="logout-btn">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1>Profile Settings</h1>
+      <form id="profile-form">
+        <div>
+          <label for="profile-name">Name:</label><br>
+          <input type="text" id="profile-name" required>
+        </div>
+        <div>
+          <label for="profile-avatar">Avatar:</label><br>
+          <img id="avatar-img" src="assets/avatar.png" alt="avatar" width="100" style="display:block; margin-bottom:10px;">
+          <input type="file" id="profile-avatar" accept="image/*">
+        </div>
+        <div>
+          <label for="profile-theme">Theme:</label><br>
+          <select id="profile-theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <button type="submit" style="margin-top:10px;">Save Profile</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>

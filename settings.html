@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings - Task Manager</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Task Manager</h2>
+      <ul class="nav-links">
+        <li><a href="home.html">📊 Dashboard</a></li>
+        <li><a href="home.html#tasks">✅ Tasks</a></li>
+        <li><a href="profile.html">👤 Profile</a></li>
+        <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+        <li><a href="#" id="logout-btn">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="navbar">
+        <h1>Settings</h1>
+      </header>
+      <section class="settings-section">
+        <p>⚙️ Settings page is under development. Coming soon!</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Logout button
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

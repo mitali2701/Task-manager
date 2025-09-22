@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Task Manager</h2>
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">📊 Dashboard</a></li>
+        <li><a href="#" id="nav-tasks">✅ Tasks</a></li>
+        <li><a href="profile.html">👤 Profile</a></li>
+        <li><a href="settings.html" id="nav-settings">⚙️ Settings</a></li>
+        <li><a href="#" id="logout-btn">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Navbar -->
+      <header class="navbar">
+        <input type="text" id="search" placeholder="🔍 Search tasks...">
+        <button id="theme-toggle">🌗</button>
+      </header>
+
+      <!-- Dashboard Overview -->
+      <section class="dashboard-overview">
+        <div class="card" id="total-tasks">Total Tasks: 0</div>
+        <div class="card" id="completed-tasks">Completed: 0</div>
+        <div class="card">
+          <p>Progress</p>
+          <div class="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+        <div class="card">
+          <p>Task Distribution</p>
+          <div class="chart">
+            <div class="bar todo-bar" title="To Do"></div>
+            <div class="bar progress-bar-chart" title="In Progress"></div>
+            <div class="bar done-bar" title="Done"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kanban Board -->
+      <section class="kanban-board">
+        <div class="kanban-column" data-status="todo">
+          <h3>📝 To Do</h3>
+          <div class="task-list" id="todo-list"></div>
+          <button class="add-task-btn" data-status="todo">+ Add Task</button>
+        </div>
+
+        <div class="kanban-column" data-status="in-progress">
+          <h3>🚧 In Progress</h3>
+          <div class="task-list" id="in-progress-list"></div>
+          <button class="add-task-btn" data-status="in-progress">+ Add Task</button>
+        </div>
+
+        <div class="kanban-column" data-status="done">
+          <h3>✅ Done</h3>
+          <div class="task-list" id="done-list"></div>
+          <button class="add-task-btn" data-status="done">+ Add Task</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notifications -->
+    <aside class="notifications" id="notifications"></aside>
+  </div>
+
+  <!-- Modal for Task -->
+  <div id="task-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <h2 id="modal-title">Add Task</h2>
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task title" required>
+        <textarea id="task-desc" placeholder="Description"></textarea>
+        <input type="date" id="task-date">
+        <select id="task-priority">
+          <option value="low">Low Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+        <input type="text" id="task-tags" placeholder="Tags (comma separated)">
+        <button type="submit">Save Task</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/dashboard.js"></script>
+
+  <script>
+    // Logout functionality
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      window.location.href = "index.html";
+    });
+
+    // Settings link works directly
+    document.getElementById("nav-settings").addEventListener("click", () => {
+      window.location.href = "settings.html";
+    });
+
+    // Optional: Tasks link scrolls to Kanban board
+    document.getElementById("nav-tasks").addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(".kanban-board").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
